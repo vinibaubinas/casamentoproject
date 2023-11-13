@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('/static/images/imgCasamento.png'); /* Substitua pela URL real da sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    text-align: center;
+}
+
+.centro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vinho {
+    color: #a53f3f; /* Cor vinho */
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 3em;
+    color: #a53f3f;
+    max-width: 600px;
+    text-align: left;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Tangerine', cursive; /* Adicionando a fonte Tangerine */
+}
+
+/* Estilo da barra de pesquisa (input) */
+#nome {
+    padding: 12px;
+    width: 80%; /* Alterado para largura percentual */
+    max-width: 300px; /* Adicionado uma largura máxima */
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Borda mais redonda */
+    margin-bottom: 10px;
+}
+
+/* Estilo do botão */
+button {
+    background-color: #a53f3f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px; /* Borda mais redonda */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ac0f0f;
+}
+
+/* Adicionando media query para ajustar estilos em telas menores */
+@media only screen and (max-width: 768px) {
+    .vinho {
+        font-size: 2.5em; /* Reduzindo o tamanho da fonte em telas menores */
+    }
+
+    .resultado {
+        font-size: 1.5em; /* Reduzindo o tamanho da fonte do resultado em telas menores */
+        padding: 15px; /* Ajustando o padding */
+    }
+
+    #nome {
+        width: 100%; /* 100% de largura em telas menores */
+        max-width: none; /* Removendo a largura máxima */
+    }
+}

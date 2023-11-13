@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        function obterInformacoesMesa() {
+            var nome = document.getElementById("nome").value;
+            if (nome.trim() === "") {
+                alert("Por favor, insira seu nome.");
+                return;
+            }
+
+            // Fazer uma chamada AJAX para a aplicação Flask
+            $.ajax({
+                type: 'POST',
+                url: '/obter_informacoes',
+                data: {nome: nome},
+                success: function(response) {
+                    mostrarResultado(response);
+                },
+                error: function(error) {
+                    alert("Erro ao obter informações da mesa.");
+                }
+            });
+        }
+
+        function mostrarResultado(resultado) {
+            // Exibir o resultado em uma div específica
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Adicionando nomes com a fonte Tangerine e posicionando acima do "Seja bem-vindo" -->
+        <h2 class="vinho" style="font-family: 'Tangerine', cursive; font-size: 5em; margin-bottom: 10px; display: inline-block;">Jessica e Gusthavo</h2>
+        
+        <!-- Div para centralizar as informações -->
+        <div class="centro">
+            <h1 class="vinho" style="font-family: 'Tangerine', cursive; font-size: 3em; margin-bottom: 20px;">Bem-vindo!</h1>
+            <p>Por favor, insira seu nome:</p>
+            <input type="text" id="nome" placeholder="Seu Nome">
+            <br>
+            <button onclick="obterInformacoesMesa()">Obter Informações da Mesa</button>
+        </div>
+
+        <!-- Div para exibir o resultado -->
+        <div id="resultado" class="resultado"></div>
+    </div>
+</body>
+</html>
