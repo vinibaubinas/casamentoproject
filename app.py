@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
-# Dados reais
+
 mesas = {
     'mesa1': {'convidados': ['Ozeni', 'Sergio', 'Nicolly', 'Natasha', 'Vinicius', 'Bruna', 'Marcos', 'Diogo'], 'numero': 1},
     'mesa2': {'convidados': ['Ana', 'Jair', 'Carol', 'Guilherme', 'Amanda', 'Alan', 'Paula', 'Diogo'], 'numero': 2},
@@ -24,13 +24,12 @@ def index():
 def obter_informacoes():
     nome = request.form.get('nome')
 
-    # Verifica se o nome está em alguma das mesas
     for mesa, info_mesa in mesas.items():
         if nome in info_mesa['convidados']:
             resposta = f"Olá, {nome}! Você está na mesa {info_mesa['numero']} com os seguintes convidados: {', '.join(info_mesa['convidados'])}."
             return jsonify(resposta)
 
-    # Se o nome não estiver em nenhuma mesa
+
     resposta = f"Desculpe, {nome}, não encontramos informações sobre a sua mesa."
     return jsonify(resposta)
 
