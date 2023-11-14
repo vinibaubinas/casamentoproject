@@ -1,1 +1,1 @@
-web: gunicorn -b: :$PORT microlog:app
+web: gunicorn app.py:app
