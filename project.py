@@ -11,7 +11,7 @@ mesas = {
     'mesa5': {'convidados': ['Maria', 'José', 'Selma', 'Adriano', 'Leandro', 'Sonia'], 'numero': 5},
     'mesa6': {'convidados': ['Rosana', 'Claudi', 'Camila', 'Vinicius', 'Rosangela', 'Marcos'], 'numero': 6},
     'mesa7': {'convidados': ['Adriana', 'Moises', 'Gabriela', 'Samara', 'Danilo', 'David', 'Pedro'], 'numero': 7},
-    'mesa8': {'convidados': ['Jessica', 'Gustavo', 'Rose', 'Pastor Alberto', 'Eduardo'], 'numero': 8},
+    'mesa8': {'convidados': ['Jessica', 'Gusthavo', 'Rose', 'Pastor Alberto', 'Eduardo'], 'numero': 8},
     'mesa9': {'convidados': ['Juliana', 'Kelly', 'Jeremias', 'Matheus', 'Julia', 'Alice', 'Tchunay', 'Cintia'], 'numero': 9},
     'mesa10': {'convidados': ['Maria de Carmo', 'Julia', 'Heton', 'Giovana', 'Cleyton', 'Emilyn', 'Vanderley'], 'numero': 10},
 }
