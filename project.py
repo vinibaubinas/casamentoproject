@@ -13,7 +13,7 @@ mesas = {
     'mesa7': {'convidados': ['Adriana', 'Moises', 'Gabriela', 'Samara', 'Danilo', 'David', 'Pedro'], 'numero': 7},
     'mesa8': {'convidados': ['Jessica', 'Gusthavo', 'Rose', 'Pastor Alberto', 'Eduardo'], 'numero': 8},
     'mesa9': {'convidados': ['Juliana', 'Kelly', 'Jeremias', 'Matheus', 'Julia', 'Alice', 'Tchunay', 'Cintia'], 'numero': 9},
-    'mesa10': {'convidados': ['Maria de Carmo', 'Julia', 'Heton', 'Giovana', 'Cleyton', 'Emilyn', 'Vanderley'], 'numero': 10},
+    'mesa10': {'convidados': ['Maria do Carmo', 'Julia', 'Helton', 'Giovana', 'Clayton', 'Emilyn', 'Vanderley'], 'numero': 10},
 }
 
 @app.route('/')
