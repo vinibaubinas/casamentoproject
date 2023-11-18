@@ -9,13 +9,15 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
         function obterInformacoesMesa() {
-            var nome = document.getElementById("nome").value;
-            if (nome.trim() === "") {
+            var nome = document.getElementById("nome").value.trim();
+            if (nome === "") {
                 alert("Por favor, insira seu nome.");
                 return;
             }
 
-            // Fazer uma chamada AJAX para a aplicação Flask
+            
+            nome = nome.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+
             $.ajax({
                 type: 'POST',
                 url: '/obter_informacoes',
@@ -30,17 +32,13 @@
         }
 
         function mostrarResultado(resultado) {
-            // Exibir o resultado em uma div específica
             document.getElementById("resultado").innerHTML = resultado;
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <!-- Adicionando nomes com a fonte Tangerine e posicionando acima do "Seja bem-vindo" -->
         <h2 class="vinho" style="font-family: 'Tangerine', cursive; font-size: 5em; margin-bottom: 10px; display: inline-block;">Jessica e Gusthavo</h2>
-        
-        <!-- Div para centralizar as informações -->
         <div class="centro">
             <h1 class="vinho" style="font-family: 'Tangerine', cursive; font-size: 3em; margin-bottom: 20px;">Bem-vindo!</h1>
             <p>Por favor, insira seu nome:</p>
@@ -49,8 +47,9 @@
             <button onclick="obterInformacoesMesa()">Obter Informações da Mesa</button>
         </div>
 
-        <!-- Div para exibir o resultado -->
+        
         <div id="resultado" class="resultado"></div>
     </div>
 </body>
 </html>
+
